@@ -1,0 +1,20 @@
+{
+    "extends": "standard-with-typescript",
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    },
+    "rules": {
+        "semi": "off",
+        "@typescript-eslint/semi": "off",
+        "space-before-function-paren": "off",
+        "@typescript-eslint/space-before-function-paren": "off",
+        "@typescript-eslint/no-floating-promises": "off",
+        "@typescript-eslint/strict-boolean-expressions": "off",
+        "@typescript-eslint/no-non-null-assertion": "off"
+        
+    },
+    "ignorePatterns": [
+        "dist",
+        "src/**/*.js"
+    ]
+}
