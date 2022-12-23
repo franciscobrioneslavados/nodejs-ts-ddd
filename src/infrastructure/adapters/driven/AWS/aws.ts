@@ -1,3 +1,4 @@
 import AWS from 'aws-sdk';
-AWS.config.update({ region: 'us-east-1' });
+import path from 'path';
+AWS.config.loadFromPath(path.resolve(__dirname, '../../../../../aws-config.json'));
 export default AWS;
