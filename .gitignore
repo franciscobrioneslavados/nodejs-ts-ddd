@@ -41,3 +41,5 @@ dist
 # ignore .lock
 yarn.lock
 package-lock.json
+
+aws-config.json

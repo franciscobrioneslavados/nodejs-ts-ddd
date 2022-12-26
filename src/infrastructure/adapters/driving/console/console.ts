@@ -13,10 +13,10 @@ import { UserDeleterUseCase } from '../../../../application/usecases/UserDeleter
   // Creating users
   const userCreatorUseCase = new UserCreatorUseCase(repository);
   const userToCreate: User = {
-    name: 'Luciana',
-    age: 12,
-    username: 'luciana24',
-    id: '1',
+    name: 'Luciana2',
+    age: 125,
+    username: 'luciana243',
+    id: '14',
   };
   await userCreatorUseCase.run(userToCreate);
 

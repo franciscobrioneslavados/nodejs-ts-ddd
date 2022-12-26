@@ -20,11 +20,11 @@ export class DynamoDBUserRepository implements UserRepository {
     const items = response.Items != null ? response.Items : [];
 
     const users = items.map((item: any) => {
-      const age: string = item.age.N ?? '';
-      const id: string = item['TUTTO-DATA-FAKER_PK'].S ?? '';
-      const name: string = item.name.S ?? '';
-      const username: string = item.username.S ?? '';
-
+      const age: string = item.age.N ?? ''
+      const id: string = item['TUTO-DATA-FAKER_PK'].S ?? ''
+      const name: string = item.name.S ?? ''
+      const username: string = item.username.S ?? ''
+      
       return {
         age: Number(age),
         id: id.split('_')[1],
@@ -108,12 +108,11 @@ export class DynamoDBUserRepository implements UserRepository {
             S: `USER_${user.id}`,
           },
         },
-        UpdateExpression:
-          'set #username = :username, #name = :name, #age = :age',
+        UpdateExpression: 'set #username = :username, #name = :name, #age = :age',
         ExpressionAttributeNames: {
-          '#:name': 'name',
-          '#:username': 'username',
-          '#:age': 'age',
+          '#name': 'name',
+          '#username': 'username',
+          '#age': 'age'
         },
         ExpressionAttributeValues: {
           ':username': {
@@ -123,7 +122,7 @@ export class DynamoDBUserRepository implements UserRepository {
             S: user.name,
           },
           ':age': {
-            N: `${user.username!}`,
+            N: `${user.age!}`,
           },
         },
       })
@@ -153,7 +152,7 @@ export class DynamoDBUserRepository implements UserRepository {
         TableName: DynamoDB.TABLE_NAME,
         FilterExpression: '#pk = :pk',
         ExpressionAttributeNames: {
-          '#pk': 'TUTTO-DATA-FAKER_PK',
+          '#pk': 'TUTO-DATA-FAKER_PK',
         },
         ExpressionAttributeValues: {
           ':pk': {
